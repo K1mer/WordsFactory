@@ -1,0 +1,82 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.WordsFactory" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@android:color/white</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <!-- Others. -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <!-- Display text styles. -->
+    <style name="WordsFactory.Display" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/rubik_bold</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="WordsFactory.Display1" parent="WordsFactory.Display">
+        <item name="android:textSize">56sp</item>
+    </style>
+    <style name="WordsFactory.Display2" parent="WordsFactory.Display">
+        <item name="android:textSize">40sp</item>
+    </style>
+    <style name="WordsFactory.Display3" parent="WordsFactory.Display">
+        <item name="android:textSize">32sp</item>
+    </style>
+    <!-- Heading text styles. -->
+    <style name="WordsFactory.Heading" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="WordsFactory.Heading1" parent="WordsFactory.Heading">
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="WordsFactory.Heading2" parent="WordsFactory.Heading">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!-- Paragraph text styles. -->
+    <style name="WordsFactory.Paragraph" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="WordsFactory.ParagraphLarge" parent="WordsFactory.Paragraph">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="WordsFactory.ParagraphMedium" parent="WordsFactory.Paragraph">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="WordsFactory.ParagraphSmall" parent="WordsFactory.Paragraph">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- Custom components styles. -->
+    <style name="Widget.WordsFactory.TextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:lineHeight">16dp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:gravity">top</item>
+    </style>
+    <style name="Widget.WordsFactory.Button" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:lineHeight">18dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:paddingHorizontal">32sp</item>
+    </style>
+    <style name="Widget.WordsFactory.FloatingActionButton" parent="android:Widget">
+        <item name="android:backgroundTint">@android:color/white</item>
+        <item name="backgroundTint">@color/gray</item>
+        <item name="borderWidth">1.5dp</item>
+        <item name="tint">@color/dark</item>
+        <item name="elevation">0dp</item>
+    </style>
+</resources>

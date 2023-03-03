@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">WordsFactory</string>
+
+    <string name="skip">Skip</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="next">Next</string>
+    <string name="lets_start">Let\'s Start</string>
+
+    <string name="intro_title_1">Learn anytime\nand anywhere</string>
+    <string name="intro_title_2">Find a course\nfor you</string>
+    <string name="intro_title_3">Improve your skills</string>
+    <string name="intro_desc">Quarantine is the perfect time to spend your\nday learning something new, from anywhere!</string>
+
+    <string name="signup_description">Create your account</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+
+    <string name="splash_screen_alt_image_text">cool_kids_on_wheels</string>
+    <string name="intro_screen_first_alt_image_text">cool_kids_long_distance_relationship</string>
+    <string name="intro_screen_second_alt_image_text">cool_kids_staying_home</string>
+    <string name="splash_screen_third_image_text">cool_kids_high_tech</string>
+    <string name="signup_screen_alt_image_text">cool_kids_standing</string>
+
+    <string name="signup_screen_back_fab_text">back_button</string>
+</resources>
