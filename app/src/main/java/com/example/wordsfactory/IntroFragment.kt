@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class IntroFirstFragment : Fragment() {
-    // Смотри здесь https://www.youtube.com/watch?v=D7D7MpuQD7Y&list=PLyfVjOYzujuj20Y-3kVhT3Zro9CrMNgNS&index=18
+class IntroFragment( private val position: Int ): Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_intro_first, container, false)
+        val layout = when( position ) {
+            0 -> R.layout.fragment_intro_first
+            1 -> R.layout.fragment_intro_second
+            else -> R.layout.fragment_intro_third
+        }
+        return inflater.inflate( layout, container, false )
     }
-
 }

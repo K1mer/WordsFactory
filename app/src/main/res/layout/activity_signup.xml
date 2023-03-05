@@ -47,24 +47,24 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
+        style="@style/Widget.WordsFactory.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <EditText
             android:id="@+id/nameEditText"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+            style="@style/Widget.WordsFactory.TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:autofillHints="name"
-            android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="101dp"
@@ -73,6 +73,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout4"
+        style="@style/Widget.WordsFactory.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -80,16 +81,15 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
         <EditText
             android:id="@+id/emailEditText"
+            style="@style/Widget.WordsFactory.TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:autofillHints="email"
-            android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="101dp"
@@ -98,6 +98,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
+        style="@style/Widget.WordsFactory.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -105,16 +106,15 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/signupButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <EditText
             android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Widget.WordsFactory.TextView"
+            android:layout_width="272dp"
+            android:layout_height="match_parent"
             android:autofillHints="password"
-            android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="101dp"
