@@ -24,4 +24,6 @@
     <string name="signup_screen_alt_image_text">cool_kids_standing</string>
 
     <string name="signup_screen_back_fab_text">back_button</string>
+
+    <string name="toast_empty_signup_field">One or more fields are not filled out. Please check if all fields are filled in and try again.</string>
 </resources>

@@ -43,11 +43,14 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:padding">0dp</item>
-        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_height">16dp</item>
         <item name="android:gravity">top</item>
         <item name="android:layout_width">45dp</item>
     </style>
-
+    <style name="Widget.WordsFactory.TextButton.Center" parent="Widget.WordsFactory.TextButton">
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">60dp</item>
+    </style>
     <style name="Widget.WordsFactory.TextButton.Right" parent="Widget.WordsFactory.TextButton">
         <item name="android:textAlignment">textEnd</item>
     </style>
@@ -80,6 +83,10 @@
         <item name="boxStrokeWidth">1dp</item>
         <item name="hintEnabled">false</item>
         <item name="hintTextColor">@color/dark_gray</item>
+    </style>
+    <style name="Widget.WordsFactory.TextInputLayout.Password" parent="Widget.WordsFactory.TextInputLayout">
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleDrawable">@drawable/password_input_toggle</item>
     </style>
     <style name="Widget.WordsFactory.PageIndicator" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicator">@null</item>
