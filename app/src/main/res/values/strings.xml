@@ -20,7 +20,7 @@
     <string name="splash_screen_alt_image_text">cool_kids_on_wheels</string>
     <string name="intro_screen_first_alt_image_text">cool_kids_long_distance_relationship</string>
     <string name="intro_screen_second_alt_image_text">cool_kids_staying_home</string>
-    <string name="splash_screen_third_image_text">cool_kids_high_tech</string>
+    <string name="intro_screen_third_alt_image_text">cool_kids_high_tech</string>
     <string name="signup_screen_alt_image_text">cool_kids_standing</string>
 
     <string name="signup_screen_back_fab_text">back_button</string>
