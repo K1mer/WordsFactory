@@ -255,18 +255,21 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/dictionaryTabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_dictionary"
             android:text="@string/dictionary" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/trainingTabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_training"
             android:text="@string/training" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/videoTabItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icon_video"

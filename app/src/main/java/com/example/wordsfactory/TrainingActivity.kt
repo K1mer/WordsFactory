@@ -6,24 +6,28 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.tabs.TabLayout
 
-class DictionaryActivity : AppCompatActivity() {
+class TrainingActivity : AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dictionary)
+        setContentView(R.layout.activity_training)
         supportActionBar?.hide()
 
         tabLayout = findViewById<View>( R.id.tabLayout ) as TabLayout
+
+        tabLayout.getTabAt(1)?.select()
+
         tabLayout.addOnTabSelectedListener( object: TabLayout.OnTabSelectedListener {
             override fun onTabSelected( tab: TabLayout.Tab? ) {
                 when( tab?.position ) {
-                    1 -> startActivity( Intent( this@DictionaryActivity, TrainingActivity::class.java ) )
-                    2 -> startActivity( Intent( this@DictionaryActivity, VideoActivity::class.java ) )
+                    0 -> startActivity( Intent( this@TrainingActivity, DictionaryActivity::class.java ) )
+                    2 -> startActivity( Intent( this@TrainingActivity, VideoActivity::class.java ) )
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
     }
 }
