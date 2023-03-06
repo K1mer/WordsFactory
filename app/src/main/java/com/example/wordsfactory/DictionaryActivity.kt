@@ -3,17 +3,16 @@ package com.example.wordsfactory
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.google.android.material.tabs.TabLayout
 
-class DictionaryActivity : AppCompatActivity() {
+class DictionaryActivity: AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dictionary)
         supportActionBar?.hide()
 
-        tabLayout = findViewById<View>( R.id.tabLayout ) as TabLayout
+        tabLayout = findViewById( R.id.tabLayout )
         tabLayout.addOnTabSelectedListener( object: TabLayout.OnTabSelectedListener {
             override fun onTabSelected( tab: TabLayout.Tab? ) {
                 when( tab?.position ) {
