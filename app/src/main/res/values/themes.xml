@@ -19,7 +19,6 @@
         <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textColor">@color/dark</item>
     </style>
-
     <style name="WordsFactory.Display2" parent="WordsFactory.Display">
         <item name="android:textSize">40sp</item>
     </style>
@@ -31,7 +30,17 @@
     <style name="WordsFactory.Heading1" parent="WordsFactory.Heading">
         <item name="android:textSize">24sp</item>
     </style>
+    <style name="WordsFactory.Heading2" parent="WordsFactory.Heading">
+        <item name="android:textSize">20sp</item>
+    </style>
     <!-- Paragraph text styles. -->
+    <style name="WordsFactory.Paragraph" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="WordsFactory.Paragraph1" parent="WordsFactory.Paragraph">
+        <item name="android:textSize">14sp</item>
+    </style>
     <!-- Custom components styles. -->
     <style name="Widget.WordsFactory.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:fontFamily">@font/rubik_medium</item>
@@ -88,6 +97,10 @@
         <item name="passwordToggleEnabled">true</item>
         <item name="passwordToggleDrawable">@drawable/password_input_toggle</item>
     </style>
+    <style name="Widget.WordsFactory.TextInputLayout.Search" parent="Widget.WordsFactory.TextInputLayout">
+        <item name="endIconMode">custom</item>
+        <item name="endIconDrawable">@drawable/icon_search</item>
+    </style>
     <style name="Widget.WordsFactory.PageIndicator" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicator">@null</item>
         <item name="android:layout_height">6dp</item>
@@ -96,5 +109,10 @@
         <item name="tabPaddingEnd">12dp</item>
         <item name="tabGravity">center</item>
         <item name="tabBackground">@drawable/tab_selector</item>
+    </style>
+    <style name="Widget.WordsFactory.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicator">@null</item>
+        <item name="android:background">@drawable/tab_layout_background</item>
+        <item name="tabTextAppearance">@style/WordsFactory.Paragraph1</item>
     </style>
 </resources>

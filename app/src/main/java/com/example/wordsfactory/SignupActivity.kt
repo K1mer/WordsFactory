@@ -1,5 +1,6 @@
 package com.example.wordsfactory
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +8,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class SignupActivity : AppCompatActivity() {
+    private lateinit var prevButton: FloatingActionButton
     private lateinit var loginButton: Button
     private lateinit var signupButton: Button
     private lateinit var nameEditText: EditText
@@ -19,6 +22,7 @@ class SignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
         supportActionBar?.hide()
 
+        prevButton = findViewById<View>( R.id.prevButton ) as FloatingActionButton
         loginButton = findViewById<View>( R.id.loginButton ) as Button
         signupButton = findViewById<View>( R.id.signupButton ) as Button
 
@@ -26,20 +30,29 @@ class SignupActivity : AppCompatActivity() {
         emailEditText = findViewById<View>( R.id.emailEditText ) as EditText
         passwordEditText = findViewById<View>( R.id.passwordEditText ) as EditText
 
-        signupButton.setOnClickListener {
-            if( nameEditText.text.isNullOrEmpty()
-                || emailEditText.text.isNullOrEmpty()
-                || passwordEditText.text.isNullOrEmpty() ) {
-                Toast.makeText( this,
-                                resources.getString( R.string.toast_empty_signup_field ),
-                                Toast.LENGTH_LONG ).show()
-            } else {
-                startActivity( Intent( this, DictionaryActivity::class.java ) )
-            }
+        prevButton.setOnClickListener {
+            startActivity( Intent( this, IntroActivity::class.java ) )
         }
 
         loginButton.setOnClickListener {
             startActivity( Intent( this, DictionaryActivity::class.java ) )
+        }
+
+        signupButton.setOnClickListener {
+            if( nameEditText.text.isNullOrEmpty()
+                || emailEditText.text.isNullOrEmpty()
+                || passwordEditText.text.isNullOrEmpty() ) {
+
+                AlertDialog.Builder( this )
+                    .setTitle( android.R.string.dialog_alert_title )
+                    .setMessage( resources.getString( R.string.toast_empty_signup_field ) )
+                    .setPositiveButton( resources.getString( android.R.string.ok ) ) {
+                        dialog, _ -> dialog.cancel()
+                    }
+                    .show()
+            } else {
+                startActivity( Intent( this, DictionaryActivity::class.java ) )
+            }
         }
     }
 }
