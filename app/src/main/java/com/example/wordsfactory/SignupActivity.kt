@@ -4,10 +4,8 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class SignupActivity : AppCompatActivity() {
@@ -22,13 +20,12 @@ class SignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
         supportActionBar?.hide()
 
-        prevButton = findViewById<View>( R.id.prevButton ) as FloatingActionButton
-        loginButton = findViewById<View>( R.id.loginButton ) as Button
-        signupButton = findViewById<View>( R.id.signupButton ) as Button
-
-        nameEditText = findViewById<View>( R.id.nameEditText ) as EditText
-        emailEditText = findViewById<View>( R.id.emailEditText ) as EditText
-        passwordEditText = findViewById<View>( R.id.passwordEditText ) as EditText
+        prevButton = findViewById( R.id.prevButton )
+        loginButton = findViewById( R.id.loginButton )
+        signupButton = findViewById( R.id.signupButton )
+        nameEditText = findViewById( R.id.nameEditText )
+        emailEditText = findViewById( R.id.emailEditText )
+        passwordEditText = findViewById( R.id.passwordEditText )
 
         prevButton.setOnClickListener {
             startActivity( Intent( this, IntroActivity::class.java ) )

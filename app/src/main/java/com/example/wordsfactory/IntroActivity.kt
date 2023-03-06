@@ -2,13 +2,11 @@ package com.example.wordsfactory
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-
 
 class IntroActivity: AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
@@ -23,8 +21,8 @@ class IntroActivity: AppCompatActivity() {
         supportActionBar?.hide()
 
         viewPager = findViewById( R.id.viewPager )
-        skipButton = findViewById<View>( R.id.skipButton ) as Button
-        nextButton = findViewById<View>( R.id.nextButton ) as Button
+        skipButton = findViewById( R.id.skipButton )
+        nextButton = findViewById( R.id.nextButton )
         pageIndicator = findViewById(R.id.pageIndicator)
         adapter = IntroAdapter( this )
 
