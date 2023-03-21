@@ -6,20 +6,19 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.google.android.material.tabs.TabLayout
 
-class VideoActivity : AppCompatActivity() {
+class VideoActivity: AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     private lateinit var webView: WebView
     private val hardcodedLink = "https://learnenglish.britishcouncil.org/general-english/video-zone"
-    @SuppressLint("SetJavaScriptEnabled")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_video)
+    @SuppressLint( "SetJavaScriptEnabled" )
+    override fun onCreate( savedInstanceState: Bundle? ) {
+        super.onCreate( savedInstanceState )
+        setContentView( R.layout.activity_video )
         supportActionBar?.hide()
 
         webView = findViewById( R.id.webView )
