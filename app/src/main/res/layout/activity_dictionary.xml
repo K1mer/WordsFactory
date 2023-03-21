@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_meaning">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/meaningsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,6 +120,7 @@
             android:paddingBottom="20dp"
             android:showDividers="middle"
             android:divider="@drawable/dictionary_divider"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/addWordButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
