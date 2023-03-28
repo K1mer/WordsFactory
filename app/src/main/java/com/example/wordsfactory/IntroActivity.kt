@@ -2,57 +2,48 @@ package com.example.wordsfactory
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
+import com.example.wordsfactory.databinding.ActivityIntroBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class IntroActivity: AppCompatActivity() {
-    private lateinit var viewPager: ViewPager2
-    private lateinit var adapter: IntroAdapter
-    private lateinit var skipButton: Button
-    private lateinit var nextButton: Button
-    private lateinit var pageIndicator: TabLayout
+    private lateinit var binding: ActivityIntroBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_intro)
+    override fun onCreate( savedInstanceState: Bundle? ) {
+        super.onCreate( savedInstanceState )
         supportActionBar?.hide()
 
-        viewPager = findViewById( R.id.viewPager )
-        skipButton = findViewById( R.id.skipButton )
-        nextButton = findViewById( R.id.nextButton )
-        pageIndicator = findViewById(R.id.pageIndicator)
-        adapter = IntroAdapter( this )
+        binding = ActivityIntroBinding.inflate( layoutInflater )
+        setContentView( binding.root )
 
-        viewPager.adapter = adapter
-        viewPager.registerOnPageChangeCallback( object: ViewPager2.OnPageChangeCallback() {
+        binding.viewPager.adapter = IntroAdapter( this )
+        binding.viewPager.registerOnPageChangeCallback( object: ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected( position: Int ) {
                 if( position == 1 ) {
-                    nextButton.text = resources.getString( R.string.next )
+                    binding.nextButton.text = resources.getString( R.string.next )
                 }
                 if( position == 2 ) {
-                    nextButton.text = resources.getString( R.string.lets_start )
+                    binding.nextButton.text = resources.getString( R.string.lets_start )
                 }
                 super.onPageSelected( position )
             }
         })
 
-        TabLayoutMediator(pageIndicator, viewPager) { _, _ -> null }.attach()
+        TabLayoutMediator( binding.pageIndicator, binding.viewPager ) { _, _ -> }.attach()
 
-        skipButton.setOnClickListener {
+        binding.skipButton.setOnClickListener {
             startActivity( Intent( this, SignupActivity::class.java ) )
         }
 
-        nextButton.setOnClickListener {
-            when( viewPager.currentItem ) {
+        binding.nextButton.setOnClickListener {
+            when( binding.viewPager.currentItem ) {
                 0 -> {
-                    viewPager.currentItem++
+                    binding.viewPager.currentItem++
                 }
                 1 -> {
-                    viewPager.currentItem++
-                    nextButton.text = resources.getString( R.string.lets_start )
+                    binding.viewPager.currentItem++
+                    binding.nextButton.text = resources.getString( R.string.lets_start )
                 }
                 2 -> {
                     startActivity( Intent( this, SignupActivity::class.java ) )

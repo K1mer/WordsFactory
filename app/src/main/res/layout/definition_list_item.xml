@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.WordsFactory.Dictionary.Meaning.Background">
+
+    <TextView
+        android:id="@+id/meaningText"
+        style="@style/Widget.WordsFactory.Dictionary.Meaning.Description"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id='@+id/exampleLayout'
+        style="@style/Widget.WordsFactory.Dictionary.Meaning.ExampleLayout"
+        app:layout_constraintTop_toBottomOf="@+id/meaningText"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/exampleLabel"
+            style="@style/Widget.WordsFactory.Dictionary.Meaning.ExampleLabel"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/exampleText"
+            style="@style/Widget.WordsFactory.Dictionary.Meaning.ExampleText"
+            app:layout_constraintStart_toEndOf="@+id/exampleLabel"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
