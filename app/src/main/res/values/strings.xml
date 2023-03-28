@@ -48,6 +48,9 @@
     <string name="signup_screen_back_fab_text">back_button</string>
     <string name="dictionary_listen_text">listen_button</string>
 
+    <string name="toast_word_save_success">A new word has been added to your dictionary!</string>
+    <string name="toast_word_save_error">An error occurred while while adding the word.</string>
+
     <string name="dialog_empty_signup_field">One or more fields are not filled out. Please check if all fields are filled in and try again.</string>
     <string name="dialog_word_not_found">An error occurred while retrieving data from the server.</string>
 </resources>

@@ -1,39 +1,43 @@
 package com.example.wordsfactory.domain
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 data class PhoneticRaw(
     val audio: String,
     val text: String
 )
-
 data class MeaningRaw(
     val partOfSpeech: String,
     val definitions: ArrayList<Definition>
 )
-
 data class WordRaw(
     val word: String,
     val phonetics: ArrayList<PhoneticRaw>,
     val meanings: ArrayList<MeaningRaw>
 )
-
 data class Definition(
     val definition: String,
     val example: String
 )
-class Word {
-    val word: String
-    val phoneticAudioSrc: String?
-    val phoneticText: String?
-    val partOfSpeech: String
-    val definitions: ArrayList<Definition>?
-    val example: String?
 
-    constructor( data: WordRaw ) {
-        this.word = data.word.replaceFirstChar( Char::titlecase )
-        this.phoneticAudioSrc = data.phonetics?.get(0)?.audio
-        this.phoneticText = data.phonetics?.get(0)?.text
-        this.partOfSpeech = data.meanings?.get(0)?.partOfSpeech!!.replaceFirstChar( Char::titlecase )
-        this.definitions = data.meanings?.get(0)?.definitions
-        this.example = data.meanings?.get(0)?.definitions?.get(0)?.example
-    }
+@Entity
+class Word(
+    @PrimaryKey
+    var word: String,
+    var phoneticAudioSrc: String?,
+    var phoneticText: String?,
+    var partOfSpeech: String?,
+    var definitions: List<Definition>?,
+    var example: String?
+) {
+
+    constructor( data: WordRaw ) : this(
+        data.word.replaceFirstChar( Char::titlecase ),
+        data.phonetics?.get(0)?.audio,
+        data.phonetics?.get(0)?.text,
+        data.meanings?.get(0)?.partOfSpeech?.replaceFirstChar( Char::titlecase ),
+        data.meanings?.get(0)?.definitions,
+        data.meanings?.get(0)?.definitions?.get(0)?.example
+    )
 }

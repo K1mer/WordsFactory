@@ -9,9 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wordsfactory.domain.Definition
 
-class DefinitionAdapter(context: Context?, definitions: ArrayList<Definition>) : RecyclerView.Adapter<DefinitionAdapter.ViewHolder>() {
+class DefinitionAdapter(context: Context?, definitions: List<Definition>) : RecyclerView.Adapter<DefinitionAdapter.ViewHolder>() {
     private val inflater: LayoutInflater
-    private val definitions: ArrayList<Definition>
+    private val definitions: List<Definition>
 
     init {
         this.definitions = definitions

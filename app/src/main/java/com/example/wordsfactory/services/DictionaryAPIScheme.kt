@@ -6,5 +6,8 @@ import retrofit2.http.Path
 
 interface DictionaryAPIScheme {
     @GET( "{word}" )
-    suspend fun getWordData( @Path( "word" ) param: String ): ArrayList<WordRaw>
+    suspend fun getWordData(
+        @Path( "word" )
+        param: String
+    ): ArrayList<WordRaw>
 }

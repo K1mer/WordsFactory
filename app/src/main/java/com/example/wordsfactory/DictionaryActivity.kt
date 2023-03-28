@@ -4,9 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.Group
 import androidx.core.view.isVisible
@@ -20,7 +18,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 class DictionaryActivity: AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     private lateinit var searchLayout: TextInputLayout
@@ -28,13 +25,14 @@ class DictionaryActivity: AppCompatActivity() {
     private lateinit var searchEditText: EditText
     private lateinit var meaningsLayout: RecyclerView
     private lateinit var definitionAdapter: DefinitionAdapter
+    private lateinit var addWordButton: Button
 
     private fun playPhoneticAudio( audioSrc: String ) {
         val mediaPlayer = MediaPlayer()
         try {
             mediaPlayer.setDataSource( audioSrc )
-            mediaPlayer.prepare()
-            mediaPlayer.start()
+            mediaPlayer.prepareAsync()
+            mediaPlayer.setOnPreparedListener { mediaPlayer.start() }
         } catch ( _: Throwable ) {}
     }
 
@@ -65,7 +63,7 @@ class DictionaryActivity: AppCompatActivity() {
             listenButton.isVisible = false
         }
 
-        meaningsLayout.adapter = DefinitionAdapter( this, word.definitions ?: arrayListOf() )
+        meaningsLayout.adapter = DefinitionAdapter( this, word.definitions ?: listOf() )
     }
 
     override fun onCreate( savedInstanceState: Bundle? ) {
@@ -78,8 +76,9 @@ class DictionaryActivity: AppCompatActivity() {
         searchEditText = findViewById( R.id.searchField )
         meaningsLayout = findViewById( R.id.meaningsLayout )
         hiddenGroup = findViewById( R.id.hidableGroup )
+        addWordButton = findViewById( R.id.addWordButton )
 
-        definitionAdapter = DefinitionAdapter( this, arrayListOf() )
+        definitionAdapter = DefinitionAdapter( this, listOf() )
         meaningsLayout.adapter = definitionAdapter
 
         hiddenGroup.isVisible = false
@@ -109,10 +108,26 @@ class DictionaryActivity: AppCompatActivity() {
                             notFoundWordHandler()
                         } else {
                             foundWordHandler( wordInfo )
+
+                            addWordButton.setOnClickListener {
+                                lifecycleScope.launch( Dispatchers.IO ) {
+                                    val resultText = try {
+                                        ApiHelper.saveWord( wordInfo )
+                                        R.string.toast_word_save_success
+                                    } catch ( _ : Throwable) {
+                                        R.string.toast_word_save_error
+                                    }
+                                    withContext( Dispatchers.Main ) {
+                                        Toast.makeText( this@DictionaryActivity,
+                                            resources.getString( resultText ), Toast.LENGTH_LONG ).show()
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
+
 }
